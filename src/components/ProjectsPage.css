@@ -1,0 +1,79 @@
+/* src/components/ProjectsPage.css */
+.projects-page {
+    padding: 2rem;
+    background-color: #0f0f0f;
+    color: #fff;
+    min-height: 100vh;
+  }
+  
+  .projects-filters {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .filter-button {
+    background: #333;
+    border: none;
+    padding: 0.5rem 1rem;
+    color: #fff;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  
+  .filter-button.active {
+    background-color: #61dafb;
+  }
+  
+  .projects-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(4, 1fr); /* Four fixed columns */
+  }
+  
+  .project-card {
+    background-color: #1a1a1a;
+    padding: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .project-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .project-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+  
+  .project-title {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    color: #fff;
+    text-align: center;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 1024px) {
+    .projects-grid {
+      grid-template-columns: repeat(3, 1fr); /* Three columns on medium screens */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .projects-grid {
+      grid-template-columns: repeat(2, 1fr); /* Two columns on small screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .projects-grid {
+      grid-template-columns: 1fr; /* One column on very small screens */
+    }
+  }
+  

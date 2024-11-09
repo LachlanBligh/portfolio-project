@@ -1,0 +1,27 @@
+/* src/components/Navbar.css */
+.navbar {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    background-color: #1a1a1a;
+  }
+  
+  .navbar-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .navbar-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+  }
+  
+  .navbar-links .active {
+    border-bottom: 2px solid #61dafb;
+  }
+  
+  .navbar-links a:hover {
+    color: #61dafb;
+  }
+  
