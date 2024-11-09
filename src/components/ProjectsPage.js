@@ -1,25 +1,24 @@
 // src/components/ProjectsPage.js
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './ProjectsPage.css';
 
 import GKMCImage from '../images/GKMC.png';
 import HCEImage from '../images/HCE.png';
 import TheBalconyImage from '../images/TheBalcony.png';
 import TheRideImage from '../images/TheRide.png';
-import AM from '../images/AM.png';
 
 function ProjectsPage() {
   const [selectedFilter, setSelectedFilter] = useState('All');
 
   const projects = [
-    { id: 1, title: 'GKMC', category: 'Music', image: GKMCImage },
+    { id: 1, title: 'GKMC', category: 'Music', image: GKMCImage, link: '/ufc-elo-engine' },
     { id: 2, title: 'HCE', category: 'Music', image: HCEImage },
-    { id: 3, title: 'The Balcony', category: 'Other', image: TheBalconyImage },
-    { id: 4, title: 'The Ride', category: 'Other', image: TheRideImage },
-    { id: 5, title: 'AM', category: 'Other', image: AM }, // Add more projects here
+    { id: 3, title: 'The Balcony', category: 'Music', image: TheBalconyImage },
+    { id: 4, title: 'The Ride', category: 'Music', image: TheRideImage },
   ];
 
-  const filters = ['All', 'Music', 'Other'];
+  const filters = ['All', 'Music'];
 
   return (
     <section className="projects-page">
@@ -39,8 +38,17 @@ function ProjectsPage() {
           .filter((project) => selectedFilter === 'All' || project.category === selectedFilter)
           .map((project) => (
             <div key={project.id} className="project-card">
-              <img src={project.image} alt={project.title} className="project-image" />
-              <p className="project-title">{project.title}</p>
+              {project.link ? (
+                <Link to={project.link}>
+                  <img src={project.image} alt={project.title} className="project-image" />
+                  <p className="project-title">{project.title}</p>
+                </Link>
+              ) : (
+                <>
+                  <img src={project.image} alt={project.title} className="project-image" />
+                  <p className="project-title">{project.title}</p>
+                </>
+              )}
             </div>
           ))}
       </div>

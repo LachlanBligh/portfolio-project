@@ -1,0 +1,151 @@
+/* Main container */
+.ufc-elo-engine {
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+    background-color: #121212;
+    color: #fff;
+  }
+  
+  /* Main content layout */
+  .content-container {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+  }
+  
+  /* Top fighters list */
+  .top-fighters {
+    width: 25%;
+    margin-right: 20px;
+  }
+  
+  .top-fighters h2 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+  }
+  
+  .top-fighters ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .top-fighters li {
+    margin-bottom: 10px;
+  }
+  
+  .top-fighters a {
+    text-decoration: none;
+    color: #00bfff;
+    font-weight: bold;
+  }
+  
+  .top-fighters a:hover {
+    color: #1e90ff;
+  }
+  
+  /* Search and fighter details container */
+  .search-container {
+    width: 70%;
+  }
+  
+  /* Enhanced search bar and button */
+  .search-input-wrapper {
+    display: flex;
+    margin-bottom: 15px;
+  }
+  
+  .search-bar {
+    width: 80%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #555;
+    border-radius: 5px 0 0 5px;
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .search-button {
+    padding: 12px 20px;
+    font-size: 16px;
+    background-color: #00bfff;
+    color: #fff;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+  }
+  
+  .search-button:hover {
+    background-color: #1e90ff;
+  }
+  
+  /* Suggestions dropdown */
+  .suggestions ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 5px 0 0;
+    background-color: #333;
+    border: 1px solid #555;
+    max-width: 100%;
+    border-radius: 4px;
+  }
+  
+  .suggestions li {
+    padding: 10px;
+    cursor: pointer;
+    font-size: 0.9em;
+  }
+  
+  .suggestions li:hover {
+    background-color: #444;
+  }
+  
+  /* Fighter details container */
+  .fighter-details {
+    margin-top: 20px;
+  }
+  
+  /* Elo chart */
+  .elo-chart {
+    margin-top: 20px;
+    background-color: #222;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    width: 100%; /* Chart takes full width */
+    height: 400px; /* Fixed height for chart */
+  }
+  
+  /* Fight history table */
+  .fight-history {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+  }
+  
+  .fight-history th, .fight-history td {
+    padding: 12px;
+    border: 1px solid #444;
+    text-align: center;
+  }
+  
+  .fight-history th {
+    background-color: #333;
+    color: #00bfff;
+    font-weight: 600;
+  }
+  
+  .fight-history td {
+    background-color: #2c2c2c;
+  }
+  
+  .fight-history td a {
+    color: #00bfff;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .fight-history td a:hover {
+    color: #1e90ff;
+  }
+  
