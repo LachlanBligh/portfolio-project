@@ -1,4 +1,3 @@
-// src/components/ProjectsPage.js
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './ProjectsPage.css';
@@ -12,10 +11,10 @@ function ProjectsPage() {
   const [selectedFilter, setSelectedFilter] = useState('All');
 
   const projects = [
-    { id: 1, title: 'UFC Elo Engine', category: 'Personal', image: UFCImage, link: '/ufc-elo-engine' },
-    { id: 2, title: 'HCE', category: 'Music', image: HCEImage },
-    { id: 3, title: 'The Balcony', category: 'Music', image: TheBalconyImage },
-    { id: 4, title: 'The Ride', category: 'Music', image: TheRideImage },
+    { id: 1, title: 'UFC Elo Engine', category: 'Personal', image: UFCImage, link: '/ufc-elo-engine', blurb: 'A comprehensive Elo rating engine for UFC fighters.' },
+    { id: 2, title: 'HCE', category: 'Music', image: HCEImage, blurb: 'A deep dive into the concept album HCE, exploring its themes and soundscapes.' },
+    { id: 3, title: 'The Balcony', category: 'Music', image: TheBalconyImage, blurb: 'An analysis of the production techniques used in The Balcony.' },
+    { id: 4, title: 'The Ride', category: 'Music', image: TheRideImage, blurb: 'A review of The Ride album, focusing on its lyrical content and musical direction.' },
   ];
 
   const filters = ['Work', 'Personal'];
@@ -37,19 +36,30 @@ function ProjectsPage() {
         {projects
           .filter((project) => selectedFilter === 'All' || project.category === selectedFilter)
           .map((project) => (
-            <div key={project.id} className="project-card">
-              {project.link ? (
-                <Link to={project.link}>
-                  <img src={project.image} alt={project.title} className="project-image" />
-                  <p className="project-title">{project.title}</p>
-                </Link>
-              ) : (
-                <>
-                  <img src={project.image} alt={project.title} className="project-image" />
-                  <p className="project-title">{project.title}</p>
-                </>
-              )}
+          <div key={project.id} className="project-card">
+            <Link to={project.link}>
+            <div className="project-inner">
+              <div className="project-front">
+                {project.link ? (
+                  <Link to={project.link}>
+                    <img src={project.image} alt={project.title} className="project-image" />
+                    <p className="project-title">{project.title}</p>
+                  </Link>
+                ) : (
+                  <>
+                    <img src={project.image} alt={project.title} className="project-image" />
+                    <p className="project-title">{project.title}</p>
+                  </>
+                )}
+              </div>
+              <div className="project-back">
+                  <p>{project.blurb}</p>
+              </div>
             </div>
+            </Link>
+
+          </div>
+
           ))}
       </div>
     </section>

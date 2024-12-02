@@ -1,20 +1,36 @@
 /* General container */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Ensures the height spans the full viewport */
+  background: url('   background.jpg') no-repeat center center fixed; /* Set background image */
+  background-size: cover; /* Ensure the image covers the entire viewport */
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Intro Container */
 .intro-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
-  height: auto;
+  width: 100%;
   padding: 20px 80px;
-  background: linear-gradient(135deg, #0f0f0f, #1b1b1b);
-  color: #ffffff;
-  font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
 }
 
 /* Left Section */
 .intro-left {
   max-width: 35%;
   margin-top: 20px;
+  text-align: center;
 }
 
 .intro-name {
@@ -26,28 +42,78 @@
 .intro-title {
   font-size: 1.5rem;
   font-weight: 400;
-  color: #61dafb;
+  color: #ffffff;
   margin-bottom: 15px;
 }
 
+/* Resume Card */
+.resume-card {
+  background: #1b1b1b; /* Same style as other cards */
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.resume-card img {
+  width: 60px; /* Icon size */
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+.resume-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #61dafb;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.resume-button:hover {
+  background-color: #52c0e1;
+}
+
+/* Social Links Section */
 .intro-socials {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 20px 0 0;
   display: flex;
-  gap: 15px;
+  gap: 30px; /* Increase gap between icons */
+  justify-content: center;
 }
 
-.intro-socials li a {
-  text-decoration: none;
-  color: #ffffff;
-  font-size: 1.1rem;
+.intro-socials li {
+  display: flex;
+  flex-direction: column; /* Stack icon and text vertically */
+  align-items: center;
+  text-align: center;
+}
+
+.social-icon {
+  width: 40px; /* Larger icon size */
+  height: 40px;
+  transition: transform 0.3s;
+  margin-bottom: 5px; /* Space between icon and text */
+}
+
+.social-icon:hover {
+  transform: scale(1.2); /* Slightly enlarge icon on hover */
+}
+
+.intro-socials li span {
+  color: #dcdcdc;
+  font-size: 0.9rem; /* Text size below icons */
   font-weight: 500;
   transition: color 0.3s;
 }
 
-.intro-socials li a:hover {
-  color: #61dafb;
+.intro-socials li a:hover span {
+  color: #61dafb; /* Highlight text on hover */
 }
 
 /* Right Section */
@@ -72,6 +138,7 @@
 }
 
 .language-card {
+  width: auto; /* Automatically adjust the width */
   background: #1b1b1b;
   padding: 20px;
   border-radius: 8px;
