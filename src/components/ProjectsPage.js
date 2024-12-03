@@ -22,6 +22,13 @@ function ProjectsPage() {
   return (
     <section className="projects-page">
       <div className="projects-filters">
+        <button
+          key="All"
+          className={`filter-button ${selectedFilter === 'All' ? 'active' : ''}`}
+          onClick={() => setSelectedFilter('All')}
+        >
+          All
+        </button>
         {filters.map((filter) => (
           <button
             key={filter}
@@ -36,30 +43,28 @@ function ProjectsPage() {
         {projects
           .filter((project) => selectedFilter === 'All' || project.category === selectedFilter)
           .map((project) => (
-          <div key={project.id} className="project-card">
-            <Link to={project.link}>
-            <div className="project-inner">
-              <div className="project-front">
-                {project.link ? (
-                  <Link to={project.link}>
-                    <img src={project.image} alt={project.title} className="project-image" />
-                    <p className="project-title">{project.title}</p>
-                  </Link>
-                ) : (
-                  <>
-                    <img src={project.image} alt={project.title} className="project-image" />
-                    <p className="project-title">{project.title}</p>
-                  </>
-                )}
-              </div>
-              <div className="project-back">
-                  <p>{project.blurb}</p>
-              </div>
+            <div key={project.id} className="project-card">
+              <Link to={project.link}>
+                <div className="project-inner">
+                  <div className="project-front">
+                    {project.link ? (
+                      <Link to={project.link}>
+                        <img src={project.image} alt={project.title} className="project-image" />
+                        <p className="project-title">{project.title}</p>
+                      </Link>
+                    ) : (
+                      <>
+                        <img src={project.image} alt={project.title} className="project-image" />
+                        <p className="project-title">{project.title}</p>
+                      </>
+                    )}
+                  </div>
+                  <div className="project-back">
+                    <p>{project.blurb}</p>
+                  </div>
+                </div>
+              </Link>
             </div>
-            </Link>
-
-          </div>
-
           ))}
       </div>
     </section>
