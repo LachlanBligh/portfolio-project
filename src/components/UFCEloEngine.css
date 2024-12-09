@@ -1,13 +1,15 @@
-/* Main container */
 .ufc-elo-engine {
-    display: flex;
-    justify-content: center;
-    padding-top: 10px;
-    padding-left: 100px;
-    padding-right: 100px;
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  padding-left: 100px;
+  padding-right: 100px;
+  color: #fff;
+  overflow-y: auto; /* Allow vertical scrolling for this page only */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  height: 100vh; /* Set height to full viewport */
+}
 
-    color: #fff;
-  }
   
   /* Main content layout */
   .content-container {

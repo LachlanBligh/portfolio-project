@@ -11,10 +11,39 @@ function ProjectsPage() {
   const [selectedFilter, setSelectedFilter] = useState('All');
 
   const projects = [
-    { id: 1, title: 'UFC Elo Engine', category: 'Personal', image: UFCImage, link: '/ufc-elo-engine', blurb: 'A comprehensive Elo rating engine for UFC fighters.' },
-    { id: 2, title: 'HCE', category: 'Music', image: HCEImage, blurb: 'A deep dive into the concept album HCE, exploring its themes and soundscapes.' },
-    { id: 3, title: 'The Balcony', category: 'Music', image: TheBalconyImage, blurb: 'An analysis of the production techniques used in The Balcony.' },
-    { id: 4, title: 'The Ride', category: 'Music', image: TheRideImage, blurb: 'A review of The Ride album, focusing on its lyrical content and musical direction.' },
+    {
+      id: 1,
+      title: 'UFC Elo Engine',
+      category: 'Personal',
+      image: UFCImage,
+      link: '/ufc-elo-engine',
+      blurb: 'A comprehensive Elo rating engine for UFC fighters.',
+      details: ['Web scraping', 'Data Processing', 'Data visualization'],
+    },
+    {
+      id: 2,
+      title: 'HCE',
+      category: 'Music',
+      image: HCEImage,
+      blurb: 'A deep dive into the concept album HCE, exploring its themes and soundscapes.',
+      details: ['Music analysis', 'Creative writing', 'Sound engineering'],
+    },
+    {
+      id: 3,
+      title: 'The Balcony',
+      category: 'Music',
+      image: TheBalconyImage,
+      blurb: 'An analysis of the production techniques used in The Balcony.',
+      details: ['Production techniques', 'Audio mixing', 'Critical analysis'],
+    },
+    {
+      id: 4,
+      title: 'The Ride',
+      category: 'Music',
+      image: TheRideImage,
+      blurb: 'A review of The Ride album, focusing on its lyrical content and musical direction.',
+      details: ['Lyrical analysis', 'Genre study', 'Musical direction'],
+    },
   ];
 
   const filters = ['Work', 'Personal'];
@@ -61,6 +90,11 @@ function ProjectsPage() {
                   </div>
                   <div className="project-back">
                     <p>{project.blurb}</p>
+                    <ul>
+                      {project.details.map((detail, index) => (
+                        <li key={index}>{detail}</li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
               </Link>
