@@ -1,4 +1,3 @@
-// src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
@@ -11,7 +10,7 @@ import SalesWebApp from './components/SalesWebApp';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/portfolio-project"> {/* Add basename */}
       <div className="App">
         <Navbar />
         <Routes>
@@ -19,9 +18,8 @@ function App() {
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
-          <Route path="/ufc-elo-engine" element={<UFCEloEngine />} /> {/* New Route */}
+          <Route path="/ufc-elo-engine" element={<UFCEloEngine />} />
           <Route path="/sales-web-app" element={<SalesWebApp />} />
-
         </Routes>
       </div>
     </Router>
@@ -29,4 +27,3 @@ function App() {
 }
 
 export default App;
-

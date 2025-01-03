@@ -29,9 +29,14 @@ function IntroPage() {
           <div className="resume-card">
             <h3>Resume</h3>
             <p>Click below to download my resume:</p>
-            <a href="/resume.docx" download className="resume-button">
+            <a
+              href={`${process.env.PUBLIC_URL}/resume.docx`}
+              download="Lachlan_Bligh_Resume.docx"
+              className="resume-button"
+            >
               Download Resume
             </a>
+
           </div>
         </div>
 

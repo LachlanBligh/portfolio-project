@@ -1,15 +1,23 @@
-// src/components/UFCEloEngine.js
-import React, { useState, useEffect } from 'react';
-import { Line } from 'react-chartjs-2';
-import { Chart, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js';
-import './UFCEloEngine.css';
+import React, { useState, useEffect } from "react";
+import { Line } from "react-chartjs-2";
+import {
+  Chart,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+} from "chart.js";
+import "./UFCEloEngine.css";
 
 Chart.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
 function UFCEloEngine() {
   const [allFighterData, setAllFighterData] = useState({});
   const [topFighters, setTopFighters] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
   const [searchResult, setSearchResult] = useState(null);
   const [suggestions, setSuggestions] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -20,7 +28,7 @@ function UFCEloEngine() {
       setLoading(true);
       setError(null);
       try {
-        const response = await fetch('/fighterelo.json');
+        const response = await fetch(`${process.env.PUBLIC_URL}/fighterelo.json`);
         if (!response.ok) {
           throw new Error(`Failed to load fighter data: ${response.status} ${response.statusText}`);
         }
@@ -44,13 +52,13 @@ function UFCEloEngine() {
   }, []);
 
   useEffect(() => {
-    if (searchTerm.trim() === '' || allFighterData[searchTerm]) {
+    if (searchTerm.trim() === "" || allFighterData[searchTerm]) {
       setSuggestions([]);
       return;
     }
     setSuggestions(
       Object.keys(allFighterData)
-        .filter(name => name.toLowerCase().startsWith(searchTerm.toLowerCase()))
+        .filter((name) => name.toLowerCase().startsWith(searchTerm.toLowerCase()))
         .sort()
         .slice(0, 10)
     );
@@ -69,10 +77,10 @@ function UFCEloEngine() {
         labels: searchResult.fights.map((_, index) => `Fight ${index + 1}`),
         datasets: [
           {
-            label: 'Elo Rating Over Fights',
-            data: searchResult.fights.map(fight => fight.eloAfterFight),
-            borderColor: '#00bfff',
-            backgroundColor: 'rgba(0, 191, 255, 0.2)',
+            label: "Elo Rating Over Fights",
+            data: searchResult.fights.map((fight) => fight.eloAfterFight),
+            borderColor: "#00bfff",
+            backgroundColor: "rgba(0, 191, 255, 0.2)",
             fill: true,
           },
         ],
@@ -89,7 +97,15 @@ function UFCEloEngine() {
           <ul>
             {topFighters.map((fighter, index) => (
               <li key={fighter.name}>
-                <strong>{index + 1}. <a href="#" onClick={() => handleSearch(fighter.name)}>{fighter.name}</a></strong>
+                <strong>
+                  {index + 1}.{" "}
+                  <button
+                    className="fighter-link"
+                    onClick={() => handleSearch(fighter.name)}
+                  >
+                    {fighter.name}
+                  </button>
+                </strong>
                 <span> - Elo: {fighter.elo.toFixed(2)}</span>
               </li>
             ))}
@@ -106,7 +122,9 @@ function UFCEloEngine() {
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
-            <button onClick={() => handleSearch()} className="search-button">Search</button>
+            <button onClick={() => handleSearch()} className="search-button">
+              Search
+            </button>
           </div>
 
           {suggestions.length > 0 && (
@@ -124,14 +142,12 @@ function UFCEloEngine() {
               <h2>{searchResult.name}</h2>
               <p>Current Elo: {searchResult.elo.toFixed(2)}</p>
 
-              {/* Elo Chart */}
               {eloChartData && (
                 <div className="elo-chart">
                   <Line data={eloChartData} options={{ responsive: true, maintainAspectRatio: false }} />
                 </div>
               )}
 
-              {/* Fight History */}
               <h3>Fight History</h3>
               <table className="fight-history">
                 <thead>
@@ -152,9 +168,12 @@ function UFCEloEngine() {
                     .map((fight, index) => (
                       <tr key={index}>
                         <td>
-                          <a href="#" onClick={() => handleSearch(fight.opponent)} className="opponent-link">
+                          <button
+                            className="opponent-link"
+                            onClick={() => handleSearch(fight.opponent)}
+                          >
                             {fight.opponent}
-                          </a>
+                          </button>
                         </td>
                         <td>{fight.result}</td>
                         <td>{fight.finishType}</td>
