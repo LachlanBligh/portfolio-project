@@ -7,6 +7,7 @@ import ProjectsPage from './components/ProjectsPage';
 import AboutPage from './components/AboutPage';
 import ContactPage from './components/ContactPage';
 import UFCEloEngine from './components/UFCEloEngine';
+import SalesWebApp from './components/SalesWebApp';
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/ufc-elo-engine" element={<UFCEloEngine />} /> {/* New Route */}
+          <Route path="/sales-web-app" element={<SalesWebApp />} />
+
         </Routes>
       </div>
     </Router>

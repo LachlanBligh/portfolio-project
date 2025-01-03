@@ -39,11 +39,14 @@ a:visited {
 }
 
 .project-card {
-  perspective: 1000px; /* Needed for the 3D flip effect */
+  perspective: 1000px;
   cursor: pointer;
   position: relative;
-  height: 350px; /* Set a fixed height for the card */
+  width: 300px; /* Increase the width of the card */
+  height: 400px; /* Increase the height of the card */
+  margin: auto; /* Center the cards in the grid */
 }
+
 
 .project-inner {
   position: relative;
@@ -65,39 +68,32 @@ a:visited {
   height: 100%;
   backface-visibility: hidden;
   border-radius: 10px;
-  padding: 1.5rem; /* Slightly increased padding for better spacing */
+  padding: 1rem;
   box-sizing: border-box;
   display: flex; /* Use flexbox to align content */
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly; /* Evenly distribute content vertically */
+  justify-content: center;
   grid-area: 1 / 1; /* Stack front and back faces */
   text-decoration: none;
+
 }
 
 .project-back {
   transform: rotateY(180deg);
-  background-color: #292929; /* Slightly lighter for better contrast */
-  color: #f0f0f0; /* Use lighter text color for readability */
-  text-align: left; /* Align text to the left for better readability */
-  line-height: 1.6; /* Add better line spacing for paragraphs */
-  font-size: 1rem; /* Set a clear, readable font size */
+  background-color: #1a1a1a; /* Match the front card background */
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
 }
 
-.project-back p {
-  margin-bottom: 1rem; /* Add spacing below paragraphs */
+.projects-grid {
+  display: grid;
+  gap: 2rem; /* Increase the gap between cards */
+  grid-template-columns: repeat(4, 1fr); /* Keep the responsive grid layout */
+  justify-items: center; /* Center align the cards */
 }
 
-.project-back ul {
-  margin: 0;
-  padding-left: 1.5rem; /* Indent the bullet points */
-  text-align: left; /* Ensure the list aligns to the left */
-  line-height: 1.6; /* Add spacing between list items */
-}
-
-.project-back li {
-  margin-bottom: 0.5rem; /* Add space between each bullet point */
-}
 
 .project-front {
   background-color: #1a1a1a;
@@ -105,30 +101,14 @@ a:visited {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center; /* Center text alignment for the front face */
-  color: #fff;
 }
-
-.project-front .project-title {
-  margin-top: 1rem;
-  font-size: 1.2rem;
-  font-weight: bold;
-}
-
-.project-front img {
-  max-width: 90%; /* Prevent images from exceeding the card width */
-  height: auto;
-  border-radius: 8px;
-  object-fit: cover;
-}
-
 
 
 .project-image {
   width: 100%;
-  height: auto;
+  height: 70%; /* Limit the image height */
+  object-fit: cover; /* Ensure the image covers the container proportionally */
   border-radius: 8px;
-  object-fit: cover;
 }
 
 .project-title {

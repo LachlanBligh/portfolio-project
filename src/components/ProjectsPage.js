@@ -3,9 +3,7 @@ import { Link } from 'react-router-dom';
 import './ProjectsPage.css';
 
 import UFCImage from '../images/ufc.jpg';
-import HCEImage from '../images/HCE.png';
-import TheBalconyImage from '../images/TheBalcony.png';
-import TheRideImage from '../images/TheRide.png';
+import Salesapp from '../images/salesapp.jpg';
 
 function ProjectsPage() {
   const [selectedFilter, setSelectedFilter] = useState('All');
@@ -22,28 +20,14 @@ function ProjectsPage() {
     },
     {
       id: 2,
-      title: 'HCE',
-      category: 'Music',
-      image: HCEImage,
-      blurb: 'A deep dive into the concept album HCE, exploring its themes and soundscapes.',
-      details: ['Music analysis', 'Creative writing', 'Sound engineering'],
+      title: 'Sales Web App',
+      category: 'Work',
+      image: Salesapp,
+      link: '/sales-web-app',
+      blurb: 'Node.js app streamlining sales with APIs, teamwork, and management.',
+      details: ['API Integration with third-party services', 'Development of essential sales tools', 'Team collaboration for large-scale projects'],
     },
-    {
-      id: 3,
-      title: 'The Balcony',
-      category: 'Music',
-      image: TheBalconyImage,
-      blurb: 'An analysis of the production techniques used in The Balcony.',
-      details: ['Production techniques', 'Audio mixing', 'Critical analysis'],
-    },
-    {
-      id: 4,
-      title: 'The Ride',
-      category: 'Music',
-      image: TheRideImage,
-      blurb: 'A review of The Ride album, focusing on its lyrical content and musical direction.',
-      details: ['Lyrical analysis', 'Genre study', 'Musical direction'],
-    },
+  
   ];
 
   const filters = ['Work', 'Personal'];
@@ -73,20 +57,11 @@ function ProjectsPage() {
           .filter((project) => selectedFilter === 'All' || project.category === selectedFilter)
           .map((project) => (
             <div key={project.id} className="project-card">
-              <Link to={project.link}>
+              <Link to={project.link} className="project-link">
                 <div className="project-inner">
                   <div className="project-front">
-                    {project.link ? (
-                      <Link to={project.link}>
-                        <img src={project.image} alt={project.title} className="project-image" />
-                        <p className="project-title">{project.title}</p>
-                      </Link>
-                    ) : (
-                      <>
-                        <img src={project.image} alt={project.title} className="project-image" />
-                        <p className="project-title">{project.title}</p>
-                      </>
-                    )}
+                    <img src={project.image} alt={project.title} className="project-image" />
+                    <p className="project-title">{project.title}</p>
                   </div>
                   <div className="project-back">
                     <p>{project.blurb}</p>

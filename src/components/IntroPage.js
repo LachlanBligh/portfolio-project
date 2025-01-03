@@ -3,8 +3,6 @@ import "./IntroPage.css";
 import JSIcon from "../images/JS.png";
 import PyIcon from "../images/py.png";
 import SQLIcon from "../images/SQL.png";
-import GitHubIcon from "../images/git.png";
-import LinkedInIcon from "../images/link.png";
 import backgroundImage from "../images/background.jpg"; // Import the image
 
 function IntroPage() {
@@ -24,6 +22,8 @@ function IntroPage() {
         <div className="intro-left">
           <h1 className="intro-name">Lachlan Bligh</h1>
           <h2 className="intro-title">Full Stack Developer</h2>
+          <p className="contact-info">Email: lachlanbligh03@gmail.com</p>
+          <p className="contact-info">Phone: 0438999293</p>
 
           {/* Resume Button */}
           <div className="resume-card">
@@ -33,8 +33,6 @@ function IntroPage() {
               Download Resume
             </a>
           </div>
-
-
         </div>
 
         {/* Right Section */}

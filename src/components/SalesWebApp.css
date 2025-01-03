@@ -1,0 +1,85 @@
+.sales-web-app {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto 1fr;
+    padding: 50px 20px;
+    color: #fff;
+    background-color: transparent;
+    height: 100vh;
+    gap: 20px; /* Space between sections */
+  }
+  
+  .sales-web-app h1 {
+    grid-column: 1 / -1; /* Spans across all columns */
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #00bfff;
+    text-align: center;
+  }
+  
+  .sales-web-app .content-container {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Adjusts space for highlights and text */
+    gap: 20px;
+  }
+  
+  .sales-web-app .highlights-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Reduce gap between sections */
+  }
+  
+  .sales-web-app .key-highlights {
+    background-color: #2c2c2c;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    padding: 10px; /* Reduce padding for smaller boxes */
+    font-size: 0.9em; /* Smaller font size for compact look */
+  }
+  
+  .sales-web-app .key-highlights h2 {
+    font-size: 1.2em; /* Slightly smaller heading */
+    margin-bottom: 8px; /* Less space under heading */
+    color: #00bfff;
+  }
+  
+  .sales-web-app .key-highlights ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sales-web-app .key-highlights ul li {
+    background: #333;
+    padding: 6px; /* Compact padding for list items */
+    margin-bottom: 6px; /* Reduced margin between items */
+    border-radius: 5px;
+    font-size: 0.9em; /* Smaller font for list items */
+    text-align: left;
+  }
+  
+  .sales-web-app .key-highlights ul li:hover {
+    background-color: #444;
+  }
+  
+  .sales-web-app .text-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .sales-web-app p {
+    font-size: 1.2em;
+    line-height: 1.8;
+    max-width: 100%;
+    text-align: justify;
+    margin-bottom: 20px;
+  }
+  
+  .sales-web-app p.important {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #00bfff;
+  }
+  
