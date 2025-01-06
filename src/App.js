@@ -10,7 +10,8 @@ import SalesWebApp from './components/SalesWebApp';
 
 function App() {
   return (
-    <Router basename="/portfolio-project"> {/* Add basename */}
+    <Router>
+      {/* No basename needed */}
       <div className="App">
         <Navbar />
         <Routes>
@@ -23,6 +24,7 @@ function App() {
         </Routes>
       </div>
     </Router>
+
   );
 }
 
