@@ -42,7 +42,6 @@ a:visited {
   perspective: 1000px;
   cursor: pointer;
   position: relative;
-  width: 300px; /* Increase the width of the card */
   height: 400px; /* Increase the height of the card */
   margin: auto; /* Center the cards in the grid */
 }
@@ -76,6 +75,7 @@ a:visited {
   justify-content: center;
   grid-area: 1 / 1; /* Stack front and back faces */
   text-decoration: none;
+  
 
 }
 
@@ -83,16 +83,10 @@ a:visited {
   transform: rotateY(180deg);
   background-color: #1a1a1a; /* Match the front card background */
   color: #fff;
-  text-align: center;
+  text-align: left;
   text-decoration: none;
 }
 
-.projects-grid {
-  display: grid;
-  gap: 2rem; /* Increase the gap between cards */
-  grid-template-columns: repeat(4, 1fr); /* Keep the responsive grid layout */
-  justify-items: center; /* Center align the cards */
-}
 
 
 .project-front {

@@ -7,6 +7,7 @@
     background-color: transparent;
     height: 100vh;
     gap: 20px; /* Space between sections */
+    margin-top: -100px;
   }
   
   .sales-web-app h1 {
