@@ -122,11 +122,15 @@ a:visited {
 @media (max-width: 768px) {
   .projects-grid {
     grid-template-columns: repeat(2, 1fr);
+    padding: 50px;
+
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .projects-grid {
     grid-template-columns: 1fr;
+    padding: 50px;
   }
+
 }

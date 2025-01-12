@@ -1,0 +1,21 @@
+/* Logo Container */
+.logo-container {
+    position: fixed;
+    margin: 10px;
+  }
+  
+  /* Logo Button */
+  .logo-button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+  }
+  
+  /* Logo Image */
+  .logo-image {
+    height: 60px; /* Fixed height */
+    width: auto; /* Maintain aspect ratio */
+    display: block;
+  }
+  

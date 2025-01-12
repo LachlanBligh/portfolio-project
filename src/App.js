@@ -7,26 +7,26 @@ import AboutPage from './components/AboutPage';
 import ContactPage from './components/ContactPage';
 import UFCEloEngine from './components/UFCEloEngine';
 import SalesWebApp from './components/SalesWebApp';
+import './App.css'; // Import the external CSS
 import Logo from './images/logo.png'; // Import the logo
 
 function App() {
-  const logoContainerStyle = {
-    position: 'fixed',
-    height: '20%', // Adjust the height to 20% of the viewport height
-    margin: '1%',
-  };
-
-  const logoImageStyle = {
-    height: '40%', // Adjust the height to 20% of the viewport height
-    width: 'auto', // Maintain the aspect ratio
+  const handleLogoClick = (e) => {
+    e.preventDefault(); // Prevent any default behavior
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth', // Smooth scrolling
+    });
   };
 
   return (
     <Router>
       <div className="App">
-        {/* Globally fixed logo */}
-        <div style={logoContainerStyle}>
-          <img src={Logo} alt="Logo" style={logoImageStyle} />
+        {/* Clickable Logo */}
+        <div className="logo-container">
+          <a href="#" onClick={handleLogoClick} className="logo-link">
+            <img src={Logo} alt="Logo" className="logo-image" />
+          </a>
         </div>
         <Navbar />
         <Routes>

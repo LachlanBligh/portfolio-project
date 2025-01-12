@@ -2,9 +2,9 @@
 html, body {
   margin: 0;
   padding: 0;
-  height: 100%; /* Ensures the height spans the full viewport */
-  background: url('   background.jpg') no-repeat center center fixed; /* Set background image */
-  background-size: cover; /* Ensure the image covers the entire viewport */
+  height: 100%; /* Full viewport height */
+  background: url('background.jpg') no-repeat center center fixed; /* Background image */
+  background-size: cover; /* Cover the entire viewport */
   color: #ffffff;
   font-family: 'Inter', sans-serif;
 }
@@ -13,7 +13,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  overflow: hidden;
+  overflow: hidden; /* Disable scrolling for desktop by default */
 }
 
 /* Intro Container */
@@ -23,25 +23,26 @@ body {
   justify-content: space-between;
   align-items: flex-start;
   width: 100%;
-  padding: 20px 80px;
+  max-width: 1500px; /* Constrain width for desktop */
+  padding: 20px 40px;
   box-sizing: border-box;
+  gap: 40px; /* Space between sections */
 }
 
 /* Left Section */
 .intro-left {
   max-width: 35%;
-  margin-top: 20px;
-  text-align: center;
+  text-align: left; /* Align text to the left for desktop */
 }
 
 .intro-name {
-  font-size: 3.5rem;
+  font-size: 4rem;
   font-weight: 700;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .intro-title {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: 400;
   color: #ffffff;
   margin-bottom: 15px;
@@ -49,17 +50,12 @@ body {
 
 /* Resume Card */
 .resume-card {
-  background: #1b1b1b; /* Same style as other cards */
+  background: #1b1b1b;
   padding: 20px;
-  border-radius: 8px;
+  border-radius: 12px;
   text-align: center;
-  margin: 20px 0;
-}
-
-.resume-card img {
-  width: 60px; /* Icon size */
-  height: 60px;
-  margin-bottom: 10px;
+  margin: 50px 0;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
 }
 
 .resume-button {
@@ -71,55 +67,17 @@ body {
   text-decoration: none;
   border-radius: 5px;
   font-weight: 500;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
 .resume-button:hover {
   background-color: #52c0e1;
-}
-
-/* Social Links Section */
-.intro-socials {
-  list-style: none;
-  padding: 0;
-  margin: 20px 0 0;
-  display: flex;
-  gap: 30px; /* Increase gap between icons */
-  justify-content: center;
-}
-
-.intro-socials li {
-  display: flex;
-  flex-direction: column; /* Stack icon and text vertically */
-  align-items: center;
-  text-align: center;
-}
-
-.social-icon {
-  width: 40px; /* Larger icon size */
-  height: 40px;
-  transition: transform 0.3s;
-  margin-bottom: 5px; /* Space between icon and text */
-}
-
-.social-icon:hover {
-  transform: scale(1.2); /* Slightly enlarge icon on hover */
-}
-
-.intro-socials li span {
-  color: #dcdcdc;
-  font-size: 0.9rem; /* Text size below icons */
-  font-weight: 500;
-  transition: color 0.3s;
-}
-
-.intro-socials li a:hover span {
-  color: #61dafb; /* Highlight text on hover */
+  transform: scale(1.05); /* Hover effect */
 }
 
 /* Right Section */
 .intro-right {
-  max-width: 55%;
+  max-width: 60%;
   line-height: 1.8;
   margin-top: 20px;
 }
@@ -133,46 +91,147 @@ body {
 /* Language Experience Section */
 .language-experience {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(3, 1fr); /* Three columns for desktop */
+  gap: 30px; /* Spacing between cards */
   margin-top: 30px;
+  justify-content: center; /* Center-align cards */
 }
 
 .language-card {
-  width: auto; /* Automatically adjust the width */
   background: #1b1b1b;
   padding: 20px;
-  border-radius: 8px;
+  border-radius: 12px;
   text-align: center;
-  transition: transform 0.3s;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .language-card:hover {
   transform: scale(1.05);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4); /* Enhanced hover shadow */
 }
 
 .language-card img {
-  width: 60px;
-  height: 60px;
-  margin-bottom: 15px;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
 }
 
 .language-card h3 {
   margin: 10px 0;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: #61dafb;
+  font-weight: 600;
 }
 
 .language-card p {
   font-size: 1rem;
   color: #dcdcdc;
+  line-height: 1.4;
 }
 
-
-
+/* Contact Info */
 .contact-info {
-  font-size: 1rem;
+  font-size: 1.1rem;
   margin: 5px 0;
   color: #ffffff;
-  justify-content: left;
+}
+
+/* Responsive Design for Medium Screens (Tablets and Small Laptops) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  html, body {
+    overflow-y: auto; /* Enable vertical scrolling for medium screens */
+  }
+
+  .intro-container {
+    flex-direction: column; /* Stack sections vertically */
+    align-items: center;
+    padding: 10px 20px; /* Reduce padding */
+    gap: 20px; /* Reduce gap between sections */
+  }
+
+  .intro-left, .intro-right {
+    max-width: 85%; /* Constrain width */
+    text-align: center; /* Center-align text */
+  }
+
+  .language-experience {
+    grid-template-columns: 1fr; /* Stack cards vertically */
+    gap: 15px;
+  }
+
+  .language-card {
+    padding: 15px; /* Reduce padding inside cards */
+  }
+
+  .language-card img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .language-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .language-card p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Responsive Design for Small Screens (Phones) */
+@media (max-width: 768px) {
+  html, body {
+    overflow-y: auto; /* Enable scrolling for mobile */
+  }
+
+  .intro-container {
+    flex-direction: column; /* Stack sections vertically */
+    align-items: center;
+    padding: 10px; /* Reduce padding */
+    gap: 15px; /* Reduce spacing */
+  }
+
+  .intro-left, .intro-right {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .intro-name {
+    font-size: 2.5rem;
+  }
+
+  .intro-title {
+    font-size: 1.2rem;
+  }
+
+  .resume-card {
+    padding: 15px;
+  }
+
+  .resume-button {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
+
+  .intro-right p {
+    font-size: 1rem;
+  }
+
+  .language-experience {
+    grid-template-columns: 1fr; /* Stack cards vertically */
+    gap: 15px;
+  }
+
+  .language-card img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .language-card h3 {
+    font-size: 1rem;
+  }
+
+  .language-card p {
+    font-size: 0.85rem;
+  }
 }
