@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './ProjectsPage.css';
+import backgroundImage from "../images/background.jpg"; // Import the background image
 
 import UFCImage from '../images/ufc.jpg';
 import Salesapp from '../images/salesapp.jpg';
@@ -32,7 +33,16 @@ function ProjectsPage() {
 
   const filters = ['Work', 'Personal'];
 
+  const pageStyle = {
+    backgroundImage: `url(${backgroundImage})`,
+    backgroundSize: "cover", // Ensures the image covers the entire screen
+    backgroundPosition: "center", // Centers the image
+    backgroundRepeat: "no-repeat", // Prevents the image from repeating
+    minHeight: "100vh", // Ensures the background covers the full viewport height
+    width: "100%", // Ensures the background covers the full width
+  };
   return (
+    <div style={pageStyle} className="retro-background">
     <section className="projects-page">
       <div className="projects-filters">
         <button
@@ -77,6 +87,8 @@ function ProjectsPage() {
           ))}
       </div>
     </section>
+    </div>
+
   );
 }
 

@@ -1,53 +1,60 @@
 import React from 'react';
 import './SalesWebApp.css';
+import backgroundImage from "../images/background.jpg"; // Import the background image
 
 function SalesWebApp() {
+  const pageStyle = {
+    backgroundImage: `url(${backgroundImage})`,
+    backgroundSize: "cover", // Ensures the image covers the entire screen
+    backgroundPosition: "center", // Centers the image
+    backgroundRepeat: "no-repeat", // Prevents the image from repeating
+    minHeight: "100vh", // Ensures the background covers the full viewport height
+    width: "100%", // Ensures the background covers the full width
+  };
   return (
-    <section className="sales-web-app">
-      <h1></h1>
-      <div className="content-container">
-        <div className="highlights-section">
-          <div className="key-highlights">
-            <h2>Features</h2>
-            <ul>
-              <li>API Integration with third-party services</li>
-              <li>Real-time sales quote generation with streamlined user workflows</li>
-              <li>Dynamic product matching based on inventory and historical sales data</li>
-              <li>Custom error logging for better debugging and troubleshooting</li>
-              <li>Implementation of performance optimization techniques for high-volume data handling</li>
-            </ul>
+    <div style={pageStyle} className="retro-background">
+      <section className="swa-container">
+        <h1 className="swa-main-title">Sales Web Application</h1>
+        <div className="swa-content-grid">
+          <div className="swa-features-sidebar">
+            <div className="swa-feature-card">
+              <h2 className="swa-card-header">Features</h2>
+              <ul className="swa-feature-list">
+                <li className="swa-feature-item">API Integration with third-party services</li>
+                <li className="swa-feature-item">Real-time sales quote generation</li>
+                <li className="swa-feature-item">Dynamic product matching</li>
+                <li className="swa-feature-item">Custom error logging</li>
+                <li className="swa-feature-item">Performance optimization</li>
+              </ul>
+            </div>
+
+            <div className="swa-feature-card">
+              <h2 className="swa-card-header">Tech Stack</h2>
+              <ul className="swa-feature-list">
+                <li className="swa-feature-item">Node.js/Express</li>
+                <li className="swa-feature-item">Google Cloud</li>
+                <li className="swa-feature-item">Firestore DB</li>
+                <li className="swa-feature-item">REST APIs</li>
+                <li className="swa-feature-item">React</li>
+              </ul>
+            </div>
           </div>
 
-          <div className="key-highlights">
-            <h2>Components Used</h2>
-            <ul>
-              <li>Node.js and Express.js for backend logic and API development</li>
-              <li>Google Cloud Platform for deployment and storage solutions</li>
-              <li>Firestore for database management</li>
-              <li>REST APIs for seamless integration with external tools</li>
-              <li>React for front-end design and interactivity</li>
-            </ul>
+          <div className="swa-description-section">
+            <div className="swa-description-block">
+              <p>
+                A scalable sales platform leveraging Node.js and Google Cloud to simplify operations with real-time quote generation, 
+                dynamic product matching, and third-party integrations.
+              </p>
+              <p>
+                Implemented custom error logging and high-performance data pipelines to process thousands of quotes instantly, 
+                optimizing workflows and reducing customer turnaround time.
+              </p>
+            </div>
           </div>
         </div>
-
-        <div className="text-section">
-          <p>
-            The Sales Web App is a powerful solution tailored for modern sales teams. Designed with scalability
-            in mind, this application leverages Node.js and Google Cloud to create a robust platform that simplifies
-            sales operations. Key features include real-time sales quote generation, dynamic product matching,
-            and seamless integration with third-party tools.
-          </p>
-          <p>
-            One of the highlights of this project was the implementation of custom error logging,
-            which provided deeper insights into application performance and improved debugging efficiency.
-            I also designed a data processing pipeline to handle large datasets efficiently, enabling the app
-            to process thousands of sales quotes in seconds. This was instrumental in optimizing team workflows
-            and reducing turnaround time for customers.
-          </p>
-        </div>
-
-      </div>
-    </section>
+      </section>
+    </div>
   );
 }
 

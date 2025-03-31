@@ -8,34 +8,34 @@ import backgroundImage from "../images/background.jpg"; // Import the background
 function IntroPage() {
   const pageStyle = {
     backgroundImage: `url(${backgroundImage})`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    backgroundAttachment: "fixed",
-    minHeight: "100vh",
-    width: "100%",
+    backgroundSize: "cover", // Ensures the image covers the entire screen
+    backgroundPosition: "center", // Centers the image
+    backgroundRepeat: "no-repeat", // Prevents the image from repeating
+    minHeight: "100vh", // Ensures the background covers the full viewport height
+    width: "100%", // Ensures the background covers the full width
   };
-
   return (
-    <div style={pageStyle}>
+    <div style={pageStyle} className="retro-background">
       <div className="intro-container">
         {/* Left Section */}
         <div className="intro-left">
           <h1 className="intro-name">Lachlan Bligh</h1>
           <h2 className="intro-title">Full Stack Developer</h2>
-          <p className="contact-info">Email: lachlanbligh03@gmail.com</p>
-          <p className="contact-info">Phone: 0438999293</p>
+          <div className="contact-card">
+            <p className="contact-info">Email: lachlanbligh03@gmail.com</p>
+            <p className="contact-info">Phone: 0438999293</p>
 
           {/* Resume Section */}
           <div className="resume-card">
-            <h3>Resume</h3>
             <p>Click below to download my resume:</p>
             <a
-              href={`${process.env.PUBLIC_URL}/resume.docx`}
-              download="Lachlan_Bligh_Resume.docx"
+              href={`${process.env.PUBLIC_URL}/Lachlan Bligh Resume.pdf`}
+              download="Lachlan Bligh Resume.pdf"
               className="resume-button"
             >
               Download Resume
             </a>
+            </div>
           </div>
         </div>
 

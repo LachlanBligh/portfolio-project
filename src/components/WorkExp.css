@@ -1,0 +1,156 @@
+/* General container */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Full viewport height */
+    width: 100%; /* Full viewport width */
+    background: url('background.jpg') no-repeat center center fixed; /* Background image */
+    background-size: cover; /* Cover the entire viewport */
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: flex-start;
+    align-items: stretch;
+    overflow: auto; /* Allow scrolling if necessary */
+  }
+  
+  /* Work Experience Container */
+  .WorkExp {
+    padding: 0; /* Remove extra padding */
+    color: #333;
+    font-family: Arial, sans-serif;
+    min-height: 100vh; /* Full viewport height */
+    width: 100%; /* Full viewport width */
+    box-sizing: border-box;
+    position: relative;
+  }
+  
+  .WorkExp-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+  }
+  
+  /* Timeline Styling */
+  .WorkExp-timeline {
+    position: relative;
+    margin: 2rem 0;
+    padding: 0;
+  }
+  
+  .WorkExp-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 4px;
+    height: 100%;
+    background: #333;
+    transform: translateX(-50%);
+  }
+  
+  .WorkExp-timeline-item {
+    position: relative;
+    margin: 2rem 0;
+    width: calc(50% - 2rem);
+    padding: 1rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .WorkExp-timeline-item.left {
+    float: left;
+    clear: both;
+  }
+  
+  .WorkExp-timeline-item.right {
+    float: right;
+    clear: both;
+  }
+  
+  .WorkExp-timeline-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background: #2c3e50;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
+  
+  .WorkExp-timeline-content {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .WorkExp-timeline-item:hover .WorkExp-timeline-content {
+    opacity: 1;
+  }
+  
+  .WorkExp-timeline-item h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: #34495e;
+  }
+  
+  .WorkExp-timeline-item p {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    color: #7f8c8d;
+  }
+  
+  .WorkExp-timeline-item ul {
+    margin-top: 1rem;
+    padding-left: 1.5rem;
+    list-style-type: disc;
+  }
+  
+  .WorkExp-timeline-item ul li {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: #7f8c8d;
+  }
+  
+  /* Responsive Design for Medium Screens (Tablets and Small Laptops) */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .WorkExp-timeline-item {
+      width: calc(70% - 2rem); /* Adjust width for medium screens */
+      margin: 2rem auto; /* Center-align items */
+      float: none; /* Remove float */
+    }
+  
+    .WorkExp-timeline::before {
+      left: 5%; /* Align timeline line */
+      transform: none;
+    }
+  }
+  
+  /* Responsive Design for Small Screens (Phones) */
+  @media (max-width: 768px) {
+    .WorkExp-timeline-item {
+      width: 100%; /* Full width for small screens */
+      margin: 1rem auto; /* Center-align items */
+      float: none; /* Remove float */
+    }
+  
+    .WorkExp-timeline::before {
+      display: none; /* Remove the timeline line */
+    }
+  
+    .WorkExp-timeline-content {
+      opacity: 1; /* Always show content */
+    }
+  
+    .WorkExp-title {
+      font-size: 2rem; /* Adjust title size */
+    }
+  }
+  

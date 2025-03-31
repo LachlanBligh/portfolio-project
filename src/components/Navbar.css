@@ -2,7 +2,6 @@
   display: flex;
   justify-content: center; /* Center links horizontally */
   align-items: center; /* Align links vertically */
-  position: relative; /* Set position relative */
   width: 100%; /* Full-width navbar */
   height: 60px; /* Set a consistent height */
   z-index: 1; /* Ensure it stays above other elements */

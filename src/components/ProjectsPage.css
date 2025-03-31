@@ -3,6 +3,11 @@
   color: #fff;
   min-height: 100vh;
 }
+
+
+
+
+
 a {
   text-decoration: none; /* Remove underline */
   color: inherit; /* Inherit the color from the parent element */
